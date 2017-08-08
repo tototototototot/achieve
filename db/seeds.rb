@@ -8,6 +8,7 @@
 100.times do |n|
   email = Faker::Internet.email
   password = "password"
+  name = Faker::Internet.user_name
   User.create!(email: email,
                name: name,
                password: password,
