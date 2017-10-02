@@ -17,6 +17,7 @@ class ContactsController < ApplicationController
      @contacts = Contact.new(contacts_params)
     if @contacts.save
       redirect_to root_path, notice: "お問い合わせが完了しました！"
+			ContactMailer.sendmail_contacts(@contacts).deliver
     else
       # 入力フォームを再描画します。
       render 'new'
