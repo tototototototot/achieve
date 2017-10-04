@@ -8,8 +8,9 @@ class ContactMailer < ApplicationMailer
   def sendmail_contacts(contacts)
     @contacts = contacts
 
-    mail to: "taka-t@nttpc.co.jp",
-			subject: '【Achieve】お問い合わせが投稿されました'
+  #  mail to: "taka-t@nttpc.co.jp",
+    mail to: @contacts.email,
+			subject: '【Achieve】お問い合わせが投稿されました '
 			
 
   end
