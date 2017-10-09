@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   root 'top#index'
+	resources :poems, only: [:index]
 # get 'blogs' => 'blogs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
