@@ -79,7 +79,7 @@ Rails.application.configure do
 
 
 
-	config.action_mailer.default_url_options = { host: 'mighty-tor-46744.git' }
+	config.action_mailer.default_url_options = { host: 'https://mighty-tor-46744.herokuapp.com' }
 	ActionMailer::Base.delivery_method = :smtp
 	ActionMailer::Base.smtp_settings =
 	{
