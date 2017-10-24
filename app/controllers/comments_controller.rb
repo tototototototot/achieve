@@ -18,6 +18,17 @@ class CommentsController < ApplicationController
   end
 
 
+
+#append
+	def destroy
+		@comment=Comment.find(params[:id])
+  	respond_to do |format|
+			@comment.destroy	
+			format.js { render :index }
+		end
+	end
+#appendend
+
   private
     # ストロングパラメーター
     def comment_params
