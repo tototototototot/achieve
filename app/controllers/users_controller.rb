@@ -8,9 +8,6 @@ class UsersController < ApplicationController
 			@user = User.find(params[:id])
 			#フォローワーとフォローしている人を調べるため
 			@users = User.all
-
 	end
-
-
 
 end
