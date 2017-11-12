@@ -1,7 +1,3 @@
-<div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-
-
 <h2>お知らせ</h2>
 <ul>
   <% @notifications.each do |notification| %>
@@ -13,11 +9,7 @@
         <%= notification.comment.user.try(:name) %>さんが
         あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
       </p>
-			<p><%= notification.created_at.strftime('%Y年%m月%d日')  %></p>
+      <p><%= notification.created_at %></p>
     </li>
   <% end %>
 </ul>
-
-
-</div>
-</div>
