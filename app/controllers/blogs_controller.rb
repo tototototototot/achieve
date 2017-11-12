@@ -9,7 +9,11 @@ class BlogsController < ApplicationController
   def show
     @comment = @blog.comments.build
     @comments = @blog.comments
+
+		#dive19-2 通知をクリックすると、通知が既読になるようにします。
+		Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
   end
+
 
   def new
     if params[:back]

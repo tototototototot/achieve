@@ -9,6 +9,21 @@ class ApplicationController < ActionController::Base
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
 
+
+	#DIVE19-2で挿入
+	#Pusherを利用してリアルタイム非同期通信で実装
+	#ログインしているときのみ、current_notificationメソッドが起動するようにする
+	before_action :current_notifications, if: :signed_in?
+	def current_notifications
+		@notifications_count = Notification.where(user_id: current_user.id).where(read: false).count
+	end
+
+
+
+
+
+
+
   protected
 
     #deviseのストロングパラメーターにカラム追加するメソッドを定義
