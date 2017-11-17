@@ -17,9 +17,6 @@ CarrierWave.configure do |config|
     when 'development'
       config.fog_directory = 'aws-demo01-achieve-development'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/aws-demo01-achieve-development'
-		when 'test'
-	  	config.fog_directory = 'テスト環境用のバケット名'
-		  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/テスト環境用のバケット名'
   end
 end
 
